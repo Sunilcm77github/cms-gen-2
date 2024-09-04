@@ -1,0 +1,56 @@
+<div class="min-h-screen flex items-center justify-center bg-cover bg-center"
+  style="background-image: url('assets/l2back.jpg');">
+  <div
+    class="w-96 bg-transparent backdrop-blur-md shadow-lg text-white rounded-lg p-8 border border-white border-opacity-20">
+    <form (ngSubmit)="onSignUp()" [formGroup]="signUpForm">
+      <h1 class="text-3xl text-center mb-8">Sign Up</h1>
+      <div class="relative mb-8">
+        <input type="text" id="userName" formControlName="userName" placeholder="user name" required
+          class="w-full bg-transparent rounded-full border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 text-base outline-none  py-2 px-4 placeholder-white leading-8 transition-colors duration-200 ease-in-out" />
+        <i class="bx bxs-user absolute right-4 top-1/2 transform -translate-y-1/2 text-xl"></i>
+        <div *ngIf="signUpForm.get('userName')?.touched && signUpForm.get('userName')?.invalid" class="text-red-600">
+          enter valid user name
+        </div>
+      </div>
+      <div class="relative mb-8">
+        <input type="email" id="email" formControlName="email" placeholder="email" required
+          class="w-full bg-transparent rounded-full border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 text-base outline-none  py-2 px-4 placeholder-white leading-8 transition-colors duration-200 ease-in-out" />
+        <i class="bx bxs-envelope absolute right-4 top-1/2 transform -translate-y-1/2 text-xl"></i>
+        <div *ngIf="signUpForm.get('email')?.touched && signUpForm.get('email')?.invalid" class="text-red-600">
+          enter valid email
+        </div>
+      </div>
+      <div class="relative mb-8">
+        <input type="password" id="password" formControlName="password" placeholder="password" required
+          class="w-full bg-transparent rounded-full border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 text-base outline-none  py-2 px-4 placeholder-white leading-8 transition-colors duration-200 ease-in-out" />
+        <i class="bx bxs-lock-alt absolute right-4 top-1/2 transform -translate-y-1/2 text-xl"></i>
+        <div *ngIf="signUpForm.get('password')?.touched && signUpForm.get('password')?.invalid" class="text-red-600">
+          enter valid password
+        </div>
+      </div>
+      <div class="relative mb-6">
+        <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="confirm password" required
+          class="w-full bg-transparent rounded-full border border-gray-700 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-900 text-base outline-none  py-2 px-4 placeholder-white leading-8 transition-colors duration-200 ease-in-out" />
+        <i class="bx bxs-lock-alt absolute right-4 top-1/2 transform -translate-y-1/2 text-xl"></i>
+        <div *ngIf="signUpForm.get('confirmPassword')?.touched && signUpForm.get('confirmPassword')?.invalid"
+          class="text-red-600">
+          enter valid password
+        </div>
+      </div>
+      <div class="flex justify-between text-sm mb-6">
+        <label class="flex items-center">
+          <input type="checkbox" class="form-checkbox text-white mr-2" />
+          Remember me
+        </label>
+        <a href="" routerLink="/forgotpassword" class="text-white hover:underline">Forget Password?</a>
+      </div>
+      <button type="submit"
+        class="w-full bg-yellow-500 text-white py-2 rounded-full shadow-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Sign
+        Up</button>
+      <div class="text-center text-sm mt-6">
+        <p>Have an account? <a routerLink="/signin" ariaCurrentWhenActive="page"
+            class="font-semibold hover:underline">Return To Login</a></p>
+      </div>
+    </form>
+  </div>
+</div>
