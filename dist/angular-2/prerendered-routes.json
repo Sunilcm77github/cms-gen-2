@@ -1,0 +1,11 @@
+{
+  "routes": [
+    "/about",
+    "/contactus",
+    "/forgotpassword",
+    "/home",
+    "/signin",
+    "/signup",
+    "/user"
+  ]
+}
